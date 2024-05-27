@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 
 public class Lomonosovs_pica {
 	public static void main(String[] args) {
-		String vards;
+        String vards;
         do {
             vards = JOptionPane.showInputDialog("Ievadiet savu vardu:");
         } while (vards.length() < 3);
@@ -31,6 +31,10 @@ public class Lomonosovs_pica {
             String size = sizes[sizeChoice].split(" - ")[0];
             System.out.println(size);
 
+            String[] pizzas = { "Speka", "Pepperoni", "Studenta" };
+            int pizzaChoice = JOptionPane.showOptionDialog(null, "Izvēlieties savu picu:", "Picas izvēle",
+                    JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, pizzas, pizzas[0]);
+            Pizza pizza;
 
             double basePrice = 0;
             switch (sizeChoice) {
@@ -43,6 +47,20 @@ public class Lomonosovs_pica {
                 case 2:
                     basePrice = 15;
                     break;
+            }
+
+            switch (pizzaChoice) {
+                case 0:
+                    pizza = new Pizza("Speka", 3.90 + basePrice);
+                    break;
+                case 1:
+                    pizza = new Pizza("Pepperoni", 2.99 + basePrice);
+                    break;
+                case 2:
+                    pizza = new Pizza("Studenta", 1.90 + basePrice);
+                    break;
+                default:
+                    pizza = null;
             }
         }
 	}
