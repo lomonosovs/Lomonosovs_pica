@@ -13,10 +13,19 @@ public class Order {
         this.vards = vards; 
         this.tel = tel; 
         this.pegade = pegade; 
+        this.pizzas = new ArrayList<>(); 
     } 
 
     public void setAddress(String adrese) { 
         this.adrese = adrese; 
+    } 
+    
+    public String getAdrese() {
+		return adrese;
+	}
+    
+    public void addPizza(Pizza pizza) { 
+        pizzas.add(pizza); 
     } 
 
     public double getTotalCost() { 
@@ -34,6 +43,9 @@ public class Order {
         String rez = "\nvards: " + vards + "\nTelefona numurs: " 
                 + tel + "\nPiegade: " + (pegade ? "Ja +5$" : "Ne") +
                 "\nAdrese: " + adrese + "\nPizzas:"; 
+        for (Pizza pizza : pizzas) { 
+            rez += "\n" + pizza.toString(); 
+        } 
         rez += "\nTotal Cost: $" + getTotalCost(); 
         return rez; 
     } 
