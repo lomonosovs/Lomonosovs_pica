@@ -20,8 +20,10 @@ public class Lomonosovs_pica {
                 JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
         boolean pegade = (pOpcijas == 0);
 
+        Order order = new Order(vards, tel, pegade);
         if (pegade) {
             String adrese = JOptionPane.showInputDialog("Ievadiet savu adresi:");
+            order.setAddress(adrese);
         }
 
         boolean pizza1 = true;
@@ -70,6 +72,23 @@ public class Lomonosovs_pica {
             JCheckBox bbqBox = new JCheckBox("BBQ Sauce +$1.00");
             Object[] piedevas = { "Izveleties piedevas:", Bbox, pBox, hBox, bbqBox };
             int izvelePied = JOptionPane.showConfirmDialog(null, piedevas, "Piedevas", JOptionPane.OK_CANCEL_OPTION);
+            
+            if (izvelePied == JOptionPane.OK_OPTION) {
+                if (Bbox.isSelected()) {
+                    pizza.addTopping("Bekons +$1.50");
+                }
+                if (pBox.isSelected()) {
+                    pizza.addTopping("Dubultais siers +$2.20");
+                }
+                if (hBox.isSelected()) {
+                    pizza.addTopping("Skintis +$1.80");
+                }
+                if (bbqBox.isSelected()) {
+                    pizza.addTopping("BBQ Sauce +$1.00");
+                }
+            }
+            System.out.println(izvelePied);
+            order.addPizza(pizza);
         }
 	}
 }
