@@ -1,5 +1,12 @@
 package niksLomonosovs;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
 
@@ -95,5 +102,23 @@ public class Lomonosovs_pica {
                 pizza1 = false;
             }
         }
+        
+        String sum = order.toString();
+        SimpleDateFormat sdf = new SimpleDateFormat("HH-mm-ss");
+        String time = sdf.format(new Date());
+        File timeFile = new File(time);
+
+        try {
+            FileWriter fw = new FileWriter(vards + timeFile.getName() + ".txt", true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write(sum);
+            bw.newLine();
+            bw.write("___________________");
+            bw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        JOptionPane.showMessageDialog(null, order);
 	}
 }

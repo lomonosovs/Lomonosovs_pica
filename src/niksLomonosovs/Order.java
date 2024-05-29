@@ -20,10 +20,6 @@ public class Order {
         this.adrese = adrese; 
     } 
     
-    public String getAdrese() {
-		return adrese;
-	}
-    
     public void addPizza(Pizza pizza) { 
         pizzas.add(pizza); 
     } 
@@ -40,11 +36,11 @@ public class Order {
     } 
 
     public String toString() {
-        String rez = "\nvards: " + vards + "\nTelefona numurs: " 
-                + tel + "\nPiegade: " + (pegade ? "Ja +5$" : "Ne") +
+        String rez = "\nVards: " + vards + "\nTelefona numurs: " 
+                + tel + "\nPiegade: " + (pegade ? "Jā +5$" : "Nē") +
                 "\nAdrese: " + adrese + "\nPizzas:"; 
         for (Pizza pizza : pizzas) { 
-            rez += "\n" + pizza.toString(); 
+            rez += "\n" + pizza; 
         } 
         rez += "\nTotal Cost: $" + getTotalCost(); 
         return rez; 
