@@ -89,6 +89,11 @@ public class Lomonosovs_pica {
             }
             System.out.println(izvelePied);
             order.addPizza(pizza);
+            int pizzaizvele = JOptionPane.showConfirmDialog(null, "Vai velaties panemt vel vienu picu?", "Izvele",
+                    JOptionPane.YES_NO_OPTION);
+            if (pizzaizvele == JOptionPane.NO_OPTION) {
+                pizza1 = false;
+            }
         }
 	}
 }
