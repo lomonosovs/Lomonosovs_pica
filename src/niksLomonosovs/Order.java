@@ -1,10 +1,13 @@
 package niksLomonosovs;
 
+import java.util.ArrayList;
+
 public class Order {
     private String vards; 
     private int tel; 
     private boolean pegade; 
     private String adrese; 
+    private ArrayList<Pizza> pizzas; 
 
     public Order(String vards, int tel, boolean pegade) { 
         this.vards = vards; 
@@ -18,7 +21,12 @@ public class Order {
 
     public double getTotalCost() { 
         double totalCost = 0; 
-        
+        for (Pizza pizza : pizzas) { 
+            totalCost += pizza.getPrice(); 
+        } 
+        if (pegade) { 
+            totalCost += 5; // 5 euro piegāde
+        } 
         return totalCost; 
     } 
 
