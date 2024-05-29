@@ -1,5 +1,6 @@
 package niksLomonosovs;
 
+import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
 
 public class Lomonosovs_pica {
@@ -62,6 +63,13 @@ public class Lomonosovs_pica {
                 default:
                     pizza = null;
             }
+            
+            JCheckBox Bbox = new JCheckBox("Bekons +$1.50");
+            JCheckBox pBox = new JCheckBox("Dubultais siers +$2.20");
+            JCheckBox hBox = new JCheckBox("Skintis +$1.80");
+            JCheckBox bbqBox = new JCheckBox("BBQ Sauce +$1.00");
+            Object[] piedevas = { "Izveleties piedevas:", Bbox, pBox, hBox, bbqBox };
+            int izvelePied = JOptionPane.showConfirmDialog(null, piedevas, "Piedevas", JOptionPane.OK_CANCEL_OPTION);
         }
 	}
 }
