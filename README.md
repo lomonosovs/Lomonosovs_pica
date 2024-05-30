@@ -24,7 +24,8 @@ Otrakart ievadam jusu talruna numuru (talrunim jabut ne lielakam par 29999999 un
 
 
 Treskart ievadam piegades adresi ja izvelejamies sanemt ar piegadi tas maksas 5 eur ja velaties sanemt uz vietas par piegadi nav jamaksa
-![image](https://github.com/lomonosovs/Lomonosovs_pica/assets/167508665/108cb573-49b2-4290-8b89-24872db18498)
+![image](https://github.com/lomonosovs/Lomonosovs_pica/assets/167508665/63b633c0-b4c5-4cb3-86e3-d228c075b582)
+
 
 
 Cetrkart izvelamies picas izmeru (jo lielaka bus pica jo vairak bus jamaksa)
