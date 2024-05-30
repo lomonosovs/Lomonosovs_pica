@@ -30,7 +30,7 @@ public class Order {
             totalCost += pizza.getPrice(); 
         } 
         if (pegade) { 
-            totalCost += 5; // 5 euro piegāde
+            totalCost += 5;
         } 
         return totalCost; 
     } 
@@ -42,7 +42,7 @@ public class Order {
         for (Pizza pizza : pizzas) { 
             rez += "\n" + pizza; 
         } 
-        rez += "\nTotal Cost: $" + getTotalCost(); 
-        return rez; 
+        rez += "\nTotal Cost: $" + String.format("%.2f", getTotalCost());
+        return rez;
     } 
 }

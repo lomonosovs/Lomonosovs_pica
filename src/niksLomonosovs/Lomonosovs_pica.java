@@ -17,12 +17,24 @@ public class Lomonosovs_pica {
             vards = JOptionPane.showInputDialog("Ievadiet savu vardu:");
         } while (vards.length() < 3);
 
-        int tel;
-        do {
-            tel = Integer.parseInt(JOptionPane.showInputDialog("Ievadiet savu talruna numuru", "Ievadi bez valsta kodu"));
-        } while (tel >= 299999999 || tel < 20000000);
+        int tel = 0;
+        boolean validTel = false;
+        while (!validTel) {
+            try {
+                String input = JOptionPane.showInputDialog("Ievadiet savu tālruņa numuru:", "Ievadi bez valsts kodu!");
+                if (input == null) {
+                    System.exit(0);
+                }
+                tel = Integer.parseInt(input);
+                if (tel >= 20000000 && tel <= 299999999) {
+                    validTel = true;
+                }
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Ievadiet derīgu telefona numuru.");
+            }
+        }
 
-        String[] options = { "Piegade", "No picerijas" };
+        String[] options = { "Piegade + 5$", "No picerijas" };
         int pOpcijas = JOptionPane.showOptionDialog(null, "Vai velaties piegadi vai sanem no picerijas?", "Piegades iespeja",
                 JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
         boolean pegade = (pOpcijas == 0);
@@ -64,7 +76,7 @@ public class Lomonosovs_pica {
                     pizza = new Pizza("Speka", 3.90 + basePrice);
                     break;
                 case 1:
-                    pizza = new Pizza("Pepperoni", 2.99 + basePrice);
+                    pizza = new Pizza("Pepperoni", 3.00 + basePrice);
                     break;
                 case 2:
                     pizza = new Pizza("Studenta", 1.90 + basePrice);
@@ -120,5 +132,6 @@ public class Lomonosovs_pica {
         }
 
         JOptionPane.showMessageDialog(null, order);
-	}
+        System.out.println(order);
+        }
 }
